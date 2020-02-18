@@ -1,1 +1,0 @@
-{"rustc":11099465043546641534,"features":"[]","target":12824500362955098176,"profile":14996655781355331481,"path":10872709659218687626,"deps":[[13827039400412351012,"ffi_support",false,4306444639014196909]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/ffi_tests-b42a693ed0ea83e1/dep-lib-ffi_test-b42a693ed0ea83e1"}}],"rustflags":[],"metadata":8234503307531119211}
