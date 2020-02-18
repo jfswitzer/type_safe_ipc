@@ -1,0 +1,14 @@
+[package]
+name = "ffi_tests"
+version = "0.1.0"
+authors = ["Jennifer Switzer <jfs@mit.edu>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ffi-support = "0.4.0"
+
+[lib]
+name = "ffi_test"
+crate-type = ["staticlib"]
