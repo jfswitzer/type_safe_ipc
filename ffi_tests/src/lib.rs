@@ -3,10 +3,8 @@ use std::{ptr, os::raw::c_char};
 pub struct SyncKeys(pub String, pub String);
 
 fn main() {
-    println!("Here in the main");
     let my_keys = SyncKeys("Hello, ".to_string(), "world".to_string());
     let c_keys = my_keys.into_ffi_value();
-    println!("Make a C key {:?}", c_keys);
 }
 
 #[repr(C)]
@@ -17,10 +15,12 @@ pub struct SyncKeysC {
 }
 
 #[no_mangle]
-pub extern fn ffi_test() -> *mut c_char {
-    //let sk = SyncKeys("ffi".to_string(), "test".to_string());
-    //sk.into_ffi_value()
-    ffi_support::rust_string_to_c("ffi test".to_string())    
+pub extern fn ffi_test() -> SyncKeysC {
+    let sk = SyncKeys("ffi".to_string(), "test".to_string());
+    let c_struct = sk.into_ffi_value();
+    //print in same format
+    println!("On Rust side, sending the values: sync_key {:?} xcs {:?}", c_struct.sync_key, c_struct.xcs);
+    c_struct
 }
 
 unsafe impl IntoFfi for SyncKeys {
