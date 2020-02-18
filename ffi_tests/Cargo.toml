@@ -8,3 +8,7 @@ edition = "2018"
 
 [dependencies]
 ffi-support = "0.4.0"
+
+[lib]
+name = "ffi_test"
+crate-type = ["staticlib"]

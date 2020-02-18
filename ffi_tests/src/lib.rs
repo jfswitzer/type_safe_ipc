@@ -15,6 +15,14 @@ pub struct SyncKeysC {
     pub sync_key: *mut c_char,
     pub xcs: *mut c_char,
 }
+
+#[no_mangle]
+pub extern fn ffi_test() -> *mut c_char {
+    //let sk = SyncKeys("ffi".to_string(), "test".to_string());
+    //sk.into_ffi_value()
+    ffi_support::rust_string_to_c("ffi test".to_string())    
+}
+
 unsafe impl IntoFfi for SyncKeys {
     type Value = SyncKeysC;
     #[inline]
