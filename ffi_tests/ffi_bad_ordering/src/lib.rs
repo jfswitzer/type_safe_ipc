@@ -12,7 +12,7 @@ pub struct SyncKeysC {
 pub extern fn ffi_test() -> SyncKeysC {
     let sk = SyncKeys(6, 7);
     let c_struct = sk.into_ffi_value();
-    println!("On Rust side, sending the values: sync_key {:?} xcs {:?}", c_struct.sync_key, c_struct.xcs);
+    println!("On Rust side, sending the values: {:?}", c_struct);
     c_struct
 }
 

@@ -1,1 +1,2 @@
-ffi_tests/target/debug/*
+ffi_tests/**/target/*
+*~
